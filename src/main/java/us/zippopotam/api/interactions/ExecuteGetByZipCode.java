@@ -24,7 +24,7 @@ public class ExecuteGetByZipCode implements Interaction {
                 Get.resource(resource).with(
                         request -> request
                                 .contentType(ContentType.JSON)
-                                .queryParam("zip", TestData.getData().get("zip").toString())
+                                .pathParam("zip", TestData.getData().get("zip").toString())
                                 .relaxedHTTPSValidation().log().all()
                 )
         );

@@ -20,7 +20,7 @@ group 'org.example'
 version '1.0-SNAPSHOT'
 
 ext{
-    serenityVersion = '2.3.12'
+    serenityVersion = '3.6.12'
 }
 
 tasks.withType(JavaCompile){
@@ -35,10 +35,10 @@ dependencies {
     implementation "org.slf4j:slf4j-simple:1.7.30"
     implementation group: 'io.rest-assured', name: 'json-schema-validator', version: '4.3.3'
     implementation group: 'com.codoid.products', name: 'fillo', version: '1.18'
-    implementation "net.serenity-bdd:serenity-cucumber6:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-cucumber:$rootProject.ext.serenityVersion"
     implementation "net.serenity-bdd:serenity-screenplay-rest:$rootProject.ext.serenityVersion"
     implementation "net.serenity-bdd:serenity-junit:$rootProject.ext.serenityVersion"
     implementation "net.serenity-bdd:serenity-core:$rootProject.ext.serenityVersion"
     implementation "net.serenity-bdd:serenity-rest-assured:$rootProject.ext.serenityVersion"
-    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
 }
