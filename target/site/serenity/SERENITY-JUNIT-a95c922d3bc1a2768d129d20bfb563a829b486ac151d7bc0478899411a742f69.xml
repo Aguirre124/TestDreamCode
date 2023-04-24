@@ -1,1 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Consult the information of a city by the zip code" skipped="0" tests="1" time="8.08" timestamp="2023-04-19 05:55:46"><testcase name="Consume of the service successfully using the zip code of the city"/></testsuite>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="1" name="Consult the information of a city by the zip code" skipped="0" tests="1" time="15.98" timestamp="2023-04-24 12:21:50"><testcase name="Consume of the service successfully using the zip code of the city"><failure message="1 expectation failed.&#10;JSON path places[0].'place name' doesn't match.&#10;Expected: San Luis&#10;  Actual: San Francisco&#10;" type="java.lang.AssertionError">1 expectation failed.
+JSON path places[0].'place name' doesn't match.
+Expected: San Luis
+  Actual: San Francisco
+</failure><system-err>1 expectation failed.
+JSON path places[0].'place name' doesn't match.
+Expected: San Luis
+  Actual: San Francisco
+&#13;
+us.zippopotam.api.stepdefinitions.GetInfoByZipCodeStepDefinition.validateTheCityName(GetInfoByZipCodeStepDefinition.java:43)&#13;
+✽.validate the city name(file:///C:/Users/camil/Desktop/Automatizaciones/CodingDreamCode/src/test/resources/features/getInformationByZipCode.feature:9)&#13;
+</system-err></testcase></testsuite>

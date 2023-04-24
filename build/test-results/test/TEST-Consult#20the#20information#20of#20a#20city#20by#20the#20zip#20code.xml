@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Consult the information of a city by the zip code" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-04-19T22:55:44" hostname="DESKTOP-M1J2PRM" time="9.239">
+<testsuite name="Consult the information of a city by the zip code" tests="1" skipped="0" failures="1" errors="0" timestamp="2023-04-24T17:21:50" hostname="DESKTOP-M1J2PRM" time="17.073">
   <properties/>
-  <testcase name="Consume of the service successfully using the zip code of the city" classname="Consult the information of a city by the zip code" time="9.239"/>
+  <testcase name="Consume of the service successfully using the zip code of the city" classname="Consult the information of a city by the zip code" time="17.073">
+    <failure message="java.lang.AssertionError: 1 expectation failed.&#10;JSON path places[0].'place name' doesn't match.&#10;Expected: San Luis&#10;  Actual: San Francisco&#10;" type="java.lang.AssertionError">java.lang.AssertionError: 1 expectation failed.
+JSON path places[0].'place name' doesn't match.
+Expected: San Luis
+  Actual: San Francisco
+
+	at net.serenitybdd.screenplay.ErrorTally.throwSummaryExceptionFrom(ErrorTally.java:38)
+	at net.serenitybdd.screenplay.ErrorTally.reportAnyErrors(ErrorTally.java:32)
+	at net.serenitybdd.screenplay.Actor.should(Actor.java:395)
+	at us.zippopotam.api.stepdefinitions.GetInfoByZipCodeStepDefinition.validateTheCityName(GetInfoByZipCodeStepDefinition.java:43)
+	at ✽.validate the city name(file:///C:/Users/camil/Desktop/Automatizaciones/CodingDreamCode/src/test/resources/features/getInformationByZipCode.feature:9)
+</failure>
+  </testcase>
   <system-out><![CDATA[Request method:	GET
 Request URI:	https://api.zippopotam.us/us/94105
 Proxy:			<none>
@@ -14,6 +26,37 @@ Headers:		Accept=*/*
 Cookies:		<none>
 Multiparts:		<none>
 Body:			<none>
+HTTP/1.1 200 OK
+Date: Mon, 24 Apr 2023 17:21:59 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+x-cache: hit
+charset: UTF-8
+vary: Accept-Encoding
+CF-Cache-Status: DYNAMIC
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=jYRAYpWd4KkTarM9s0EPPkW%2BMIxpTOfhUYISdSjkddN0ikGnVqnH7OS%2Fh46Tb2moQgsDLtc%2BCHYSKYKSZ%2Fl22RpyAKVuoyoLwrCa0sK%2FeLFiUBH7OrJdwV%2F2jrhir8FROe%2Bs4g%3D%3D"}],"group":"cf-nel","max_age":604800}
+NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+access-control-allow-origin: *
+Server: cloudflare
+CF-RAY: 7bd006999c55db05-MIA
+Content-Encoding: gzip
+alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+
+{
+    "post code": "94105",
+    "country": "United States",
+    "country abbreviation": "US",
+    "places": [
+        {
+            "place name": "San Francisco",
+            "longitude": "-122.3892",
+            "state": "California",
+            "state abbreviation": "CA",
+            "latitude": "37.7864"
+        }
+    ]
+}
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

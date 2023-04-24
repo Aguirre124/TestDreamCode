@@ -4,6 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.GivenWhenThen;
+import us.zippopotam.api.questions.VerifyCityName;
 import us.zippopotam.api.questions.VerifyStatusCode;
 import us.zippopotam.api.tasks.GetByZipCode;
 import us.zippopotam.api.tasks.Load;
@@ -12,6 +13,7 @@ import us.zippopotam.api.utils.resources.WebServicesEndPoints;
 import java.util.List;
 import java.util.Map;
 
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class GetInfoByZipCodeStepDefinition {
@@ -32,6 +34,12 @@ public class GetInfoByZipCodeStepDefinition {
 
     @Then("see the status code is {int}")
     public void see_the_status_code_is(Integer responseCode) {
-        theActorInTheSpotlight().should(GivenWhenThen.seeThat(VerifyStatusCode.is(responseCode)));
+        theActorInTheSpotlight().should(seeThat(VerifyStatusCode.is(responseCode)));
+    }
+
+    @Then("validate the city name")
+    public void validateTheCityName() {
+        theActorInTheSpotlight()
+                .should(seeThat(VerifyCityName.is()));
     }
 }
